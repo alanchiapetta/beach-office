@@ -22,7 +22,7 @@ CACHE = ROOT / "data" / "cache"
 XLS_PATH = CACHE / "municipios_costeiros_2024.xls"
 
 MAX_CANDIDATES = 1000
-MAX_POP = 20_000
+MAX_POP = 80_000
 MEDIUM_MIN_POP = 150_000
 MEDIUM_MIN_KM = 20
 MEDIUM_MAX_KM = 50
