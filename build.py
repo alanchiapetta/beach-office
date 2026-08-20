@@ -96,7 +96,7 @@ def build_index(stats: dict, cities: list, crime_zones: list, css_href: str, js_
 
   <header class="map-header">
     <h1>Top {stats["total"]} Cidadezinhas para Dev Remoto no Litoral</h1>
-    <p>Apenas municípios defrontantes com o mar. Até 20 mil hab., 20–50 km de cidade média (≥150 mil), até 1h30 de cidade grande (≥500 mil). UPA/emergência no conjunto. Homicídios ≤ 15/100 mil. Ordenado por IDH. Marque um serviço para exigir que a cidade o tenha.</p>
+    <p>Apenas municípios defrontantes com o mar. Até 80 mil hab., 20–50 km de cidade média (≥150 mil), até 1h30 de cidade grande (≥500 mil). UPA/emergência no conjunto. Mortalidade por causas externas (cap. XX). Ordenado por IDH. Marque um serviço para exigir que a cidade o tenha.</p>
     <div class="map-stats">
       <span class="stat">Total: {stats["total"]}</span>
       <span class="stat">NE: {stats["ne"]}</span>
