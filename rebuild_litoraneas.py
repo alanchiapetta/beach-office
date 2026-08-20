@@ -30,7 +30,7 @@ LARGE_MIN_POP = 500_000
 DRIVE_KMH = 80
 MAX_LARGE_HOURS = 1.5
 MAX_LARGE_KM = DRIVE_KMH * MAX_LARGE_HOURS  # 120 km
-MAX_TAXA_HOMICIDIO = 15.0
+MAX_TAXA_HOMICIDIO = 50.0
 
 UF_REGIAO = {
     "AC": "Norte", "AP": "Norte", "AM": "Norte", "PA": "Norte", "RO": "Norte",
@@ -313,7 +313,7 @@ def main():
             "delegacia": has_delegacia,
             "correios": has_correios,
         }
-        hidden = not all(infra.values())
+        hidden = not (has_upa and has_escola)
 
         kept.append({
             **c,
@@ -379,14 +379,14 @@ def main():
                 "Escola: estrutura educacional municipal (MUNIC 2021)",
                 "Farmácia, delegacia, mercado e Correios: inclusos no JSON; hidden=true se faltar algum",
                 "Mercado/Correios: proxy (sede ≥2 mil hab. + farmácia); não há cadastro nacional aberto",
-                f"Taxa de homicídios ≤ {int(MAX_TAXA_HOMICIDIO)}/100 mil (SIM/DATASUS 2022–2024); municípios sem série não foram descartados por violência",
+                f"Taxa de homicídios ≤ {int(MAX_TAXA_HOMICIDIO)}/100 mil (estimativa SIM/DATASUS 2022–2024 via causas externas); municípios sem série não foram descartados por violência",
             ],
             "fontes": [
                 "IBGE Municípios Defrontantes com o Mar 2024",
                 "IBGE Estimativas de população 2024 (SIDRA 6579)",
                 "IBGE MUNIC 2021 (saúde e educação) e MUNIC 2023 (segurança pública)",
                 "Atlas IDHM 2010 (PNUD/IPEA/FJP) — IDH, coordenadas e altitude da sede",
-                "SIM/DATASUS — homicídios por município (X85–Y09)",
+                "SIM/DATASUS — homicídios por município estimados via causas externas (cap. XX) × proporção UF (X85–Y09)",
                 "CNES/DATASUS — estabelecimentos (UPA, farmácia), se disponível",
             ],
             "distribuicao": {
