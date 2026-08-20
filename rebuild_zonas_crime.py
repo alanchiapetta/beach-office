@@ -50,7 +50,7 @@ def load_homicidios() -> dict[str, dict]:
             if rec is None or year > rec["ano"]:
                 by_cod[cod] = {
                     "ano": year,
-                    "homicidios": int(float(row["homicide_count"])),
+                    "obitos_ext": int(float(row["homicide_count"])),
                 }
     return by_cod
 
@@ -60,9 +60,9 @@ def entry(cod: str, h: dict, r: dict, p: int) -> dict:
         "nome": r["nome"],
         "uf": r["uf"],
         "idh": round(r["idh"], 3),
-        "taxa_homicidios_100k": round(h["homicidios"] / p * 100_000, 1),
+        "taxa_homicidios_100k": round(h["obitos_ext"] / p * 100_000, 1),
         "pop": p,
-        "homicidios": h["homicidios"],
+        "homicidios": h["obitos_ext"],
         "homicidios_ano": h["ano"],
         "ibge": cod,
         "lat": round(r["lat"], 4),

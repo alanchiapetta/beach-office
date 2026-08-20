@@ -30,7 +30,7 @@ LARGE_MIN_POP = 500_000
 DRIVE_KMH = 80
 MAX_LARGE_HOURS = 1.5
 MAX_LARGE_KM = DRIVE_KMH * MAX_LARGE_HOURS  # 120 km
-MAX_TAXA_HOMICIDIO = 50.0
+MAX_TAXA_EXTERNAS = 150.0
 
 UF_REGIAO = {
     "AC": "Norte", "AP": "Norte", "AM": "Norte", "PA": "Norte", "RO": "Norte",
@@ -154,8 +154,8 @@ def load_homicidios() -> dict[str, dict]:
             if rec is None or year > rec["ano"]:
                 by_cod[cod] = {
                     "ano": year,
-                    "homicidios": int(float(row["homicide_count"])),
-                    "taxa_homicidios_100k": float(row["homicide_rate_per_100k"]),
+                    "obitos_ext": int(float(row["homicide_count"])),
+                    "taxa_ext_100k": float(row["homicide_rate_per_100k"]),
                 }
     return by_cod
 
@@ -217,11 +217,11 @@ def build_seguranca(row: dict | None, hom: dict | None) -> str:
     bits = []
     if hom:
         bits.append(
-            f"taxa de homicídios {hom['taxa_homicidios_100k']:.1f}/100 mil hab. "
-            f"({hom['homicidios']} óbito{'s' if hom['homicidios'] != 1 else ''} em {hom['ano']}; SIM/DATASUS)"
+            f"mortalidade por causas externas {hom['taxa_ext_100k']:.1f}/100 mil hab. "
+            f"({hom['obitos_ext']} óbito{'s' if hom['obitos_ext'] != 1 else ''} em {hom['ano']}; cap. XX, saudeemdado/IBGE)"
         )
     else:
-        bits.append("taxa de homicídios não disponível no SIM 2022–2024")
+        bits.append("mortalidade por causas externas não disponível (2022–2024)")
     if row:
         if yes(row.get("MSEG161", "")):
             bits.append("delegacia de polícia civil (MUNIC 2023)")
@@ -295,8 +295,8 @@ def main():
         has_mercado = has_farmacia and c["pop"] >= 2000
         has_correios = c["pop"] >= 2000
 
-        if h is not None and h["taxa_homicidios_100k"] > MAX_TAXA_HOMICIDIO:
-            dropped[f"homicidio>{int(MAX_TAXA_HOMICIDIO)}"] += 1
+        if h is not None and h["taxa_ext_100k"] > MAX_TAXA_EXTERNAS:
+            dropped[f"externas>{int(MAX_TAXA_EXTERNAS)}"] += 1
             continue
         if not has_upa:
             dropped["sem_upa_emergencia"] += 1
@@ -347,9 +347,9 @@ def main():
             "altitude": c["altitude"],
             "cidade_media": f"{c['medium']['nome']} ({fmt_km(c['medium_km'])})",
             "grande_centro": f"{c['large']['nome']} ({fmt_time(c['large_km'])}, {fmt_km(c['large_km'])})",
-            "homicidios": None if not c["hom"] else c["hom"]["homicidios"],
+            "homicidios": None if not c["hom"] else c["hom"]["obitos_ext"],
             "homicidios_ano": None if not c["hom"] else c["hom"]["ano"],
-            "taxa_homicidios_100k": None if not c["hom"] else round(c["hom"]["taxa_homicidios_100k"], 1),
+            "taxa_homicidios_100k": None if not c["hom"] else round(c["hom"]["taxa_ext_100k"], 1),
             "saude": c["saude_txt"],
             "educacao": c["educacao_txt"],
             "seguranca": c["seguranca_txt"],
@@ -358,9 +358,9 @@ def main():
             "nota": (
                 f"IDH {c['idh']:.3f} (Atlas 2010)"
                 + (
-                    f"; homicídios {c['hom']['taxa_homicidios_100k']:.1f}/100 mil ({c['hom']['ano']})"
+                    f"; causas externas {c['hom']['taxa_ext_100k']:.1f}/100 mil ({c['hom']['ano']})"
                     if c["hom"]
-                    else "; taxa de homicídios indisponível no SIM 2022–2024"
+                    else "; mortalidade por causas externas indisponível (2022–2024)"
                 )
                 + "; validar comércio e Correios no local"
             ),
@@ -379,14 +379,14 @@ def main():
                 "Escola: estrutura educacional municipal (MUNIC 2021)",
                 "Farmácia, delegacia, mercado e Correios: inclusos no JSON; hidden=true se faltar algum",
                 "Mercado/Correios: proxy (sede ≥2 mil hab. + farmácia); não há cadastro nacional aberto",
-                f"Taxa de homicídios ≤ {int(MAX_TAXA_HOMICIDIO)}/100 mil (estimativa SIM/DATASUS 2022–2024 via causas externas); municípios sem série não foram descartados por violência",
+                f"Mortalidade por causas externas (cap. XX CID-10) ≤ {int(MAX_TAXA_EXTERNAS)}/100 mil (saudeemdado/IBGE 2022–2024); municípios sem série não foram descartados",
             ],
             "fontes": [
                 "IBGE Municípios Defrontantes com o Mar 2024",
                 "IBGE Estimativas de população 2024 (SIDRA 6579)",
                 "IBGE MUNIC 2021 (saúde e educação) e MUNIC 2023 (segurança pública)",
                 "Atlas IDHM 2010 (PNUD/IPEA/FJP) — IDH, coordenadas e altitude da sede",
-                "SIM/DATASUS — homicídios por município estimados via causas externas (cap. XX) × proporção UF (X85–Y09)",
+                "saudeemdado/IBGE — mortalidade por causas externas por município (cap. XX CID-10, 2022–2024)",
                 "CNES/DATASUS — estabelecimentos (UPA, farmácia), se disponível",
             ],
             "distribuicao": {

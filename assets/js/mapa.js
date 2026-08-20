@@ -39,9 +39,9 @@ const FAIXAS_IDH = [
 ];
 
 const FAIXAS_VIOLENCIA = [
-  { max: 7.5, cor: "#06b6d4", texto: "≤ 7,5 / 100 mil" },
-  { max: 11, cor: "#fbbf24", texto: "7,5 – 11 / 100 mil" },
-  { max: Infinity, cor: "#ef4444", texto: "> 11 / 100 mil" },
+  { max: 50, cor: "#06b6d4", texto: "≤ 50 / 100 mil" },
+  { max: 100, cor: "#fbbf24", texto: "50 – 100 / 100 mil" },
+  { max: Infinity, cor: "#ef4444", texto: "> 100 / 100 mil" },
 ];
 
 function faixaDe(valor, faixas) {
@@ -63,7 +63,7 @@ const MODOS_COR = {
       (faixaDe(c.taxa_homicidios_100k, FAIXAS_VIOLENCIA) || {}).cor || COR_SEM_DADO,
     legenda: () =>
       FAIXAS_VIOLENCIA.map((f) => ({ cor: f.cor, texto: f.texto })).concat([
-        { cor: COR_SEM_DADO, texto: "sem série no SIM" },
+        { cor: COR_SEM_DADO, texto: "sem dados de causas externas" },
       ]),
   },
 };
@@ -118,9 +118,9 @@ function popupCrime(c) {
   return (
     `<b>${escapeHtml(c.nome)}/${escapeHtml(c.uf)}</b> ${escapeHtml(rank)}<br>` +
     `IDH: ${escapeHtml(idh)}<br>` +
-    `Mortes: ${escapeHtml(taxa)}/100 mil hab.<br>` +
+    `Causas externas: ${escapeHtml(taxa)}/100 mil hab.<br>` +
     `Habitantes: ${escapeHtml(pop)}<br>` +
-    `Homicídios: ${escapeHtml(mortes)} (${escapeHtml(ano)}; SIM/DATASUS)` +
+    `Óbitos: ${escapeHtml(mortes)} (${escapeHtml(ano)}; cap. XX, saudeemdado/IBGE)` +
     (grupo ? `<br>${escapeHtml(grupo)}` : "")
   );
 }
@@ -157,12 +157,12 @@ function tagsInfra(c) {
 
 function linhaViolencia(c) {
   const faixa = faixaDe(c.taxa_homicidios_100k, FAIXAS_VIOLENCIA);
-  if (!faixa) return `<span class="risk risk-na">homicídios: sem série</span>`;
+  if (!faixa) return `<span class="risk risk-na">causas externas: sem dados</span>`;
   const nivel = FAIXAS_VIOLENCIA.indexOf(faixa);
   const taxa = decimal(c.taxa_homicidios_100k, 1);
   return (
     `<span class="risk risk-${nivel}" style="--risk:${faixa.cor}">` +
-    `${escapeHtml(taxa)} homicídios/100 mil</span>`
+    `${escapeHtml(taxa)} óbitos ext./100 mil</span>`
   );
 }
 

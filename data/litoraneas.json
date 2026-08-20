@@ -10,14 +10,14 @@
       "Escola: estrutura educacional municipal (MUNIC 2021)",
       "Farmácia, delegacia, mercado e Correios: inclusos no JSON; hidden=true se faltar algum",
       "Mercado/Correios: proxy (sede ≥2 mil hab. + farmácia); não há cadastro nacional aberto",
-      "Taxa de homicídios ≤ 50/100 mil (estimativa SIM/DATASUS 2022–2024 via causas externas); municípios sem série não foram descartados por violência"
+      "Mortalidade por causas externas (cap. XX CID-10) ≤ 150/100 mil (saudeemdado/IBGE 2022–2024); municípios sem série não foram descartados"
     ],
     "fontes": [
       "IBGE Municípios Defrontantes com o Mar 2024",
       "IBGE Estimativas de população 2024 (SIDRA 6579)",
       "IBGE MUNIC 2021 (saúde e educação) e MUNIC 2023 (segurança pública)",
       "Atlas IDHM 2010 (PNUD/IPEA/FJP) — IDH, coordenadas e altitude da sede",
-      "SIM/DATASUS — homicídios por município estimados via causas externas (cap. XX) × proporção UF (X85–Y09)",
+      "saudeemdado/IBGE — mortalidade por causas externas por município (cap. XX CID-10, 2022–2024)",
       "CNES/DATASUS — estabelecimentos (UPA, farmácia), se disponível"
     ],
     "distribuicao": {
@@ -45,12 +45,12 @@
       "altitude": 41,
       "cidade_media": "Serra (28 km)",
       "grande_centro": "Serra (~15 min, 28 km)",
-      "homicidios": 4,
+      "homicidios": 17,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 20.9,
+      "taxa_homicidios_100k": 90.3,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (6 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria exclusiva; conselho municipal de educação; conselho de alimentação escolar; demanda de pré-escola mapeada",
-      "seguranca": "taxa de homicídios 20.9/100 mil hab. (4 óbitos em 2024; SIM/DATASUS); delegacia de polícia civil (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 90.3/100 mil hab. (17 óbitos em 2024; cap. XX, saudeemdado/IBGE); delegacia de polícia civil (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -60,7 +60,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.718 (Atlas 2010); homicídios 20.9/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.718 (Atlas 2010); causas externas 90.3/100 mil (2024); validar comércio e Correios no local"
     },
     {
       "rank": 2,
@@ -78,12 +78,12 @@
       "altitude": 15,
       "cidade_media": "Macaé (24 km)",
       "grande_centro": "Campos dos Goytacazes (~45 min, 59 km)",
-      "homicidios": 2,
+      "homicidios": 15,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 16.9,
+      "taxa_homicidios_100k": 104.7,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (4 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria exclusiva; conselho municipal de educação; conselho de alimentação escolar; demanda de pré-escola mapeada",
-      "seguranca": "taxa de homicídios 16.9/100 mil hab. (2 óbitos em 2024; SIM/DATASUS); sem delegacia de polícia civil declarada (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 104.7/100 mil hab. (15 óbitos em 2024; cap. XX, saudeemdado/IBGE); sem delegacia de polícia civil declarada (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -93,7 +93,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.713 (Atlas 2010); homicídios 16.9/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.713 (Atlas 2010); causas externas 104.7/100 mil (2024); validar comércio e Correios no local"
     },
     {
       "rank": 3,
@@ -111,12 +111,12 @@
       "altitude": 39,
       "cidade_media": "Parnamirim (36 km)",
       "grande_centro": "Natal (~45 min, 52 km)",
-      "homicidios": 1,
+      "homicidios": 4,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 6.9,
+      "taxa_homicidios_100k": 22.4,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (6 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria exclusiva; conselho municipal de educação; conselho de alimentação escolar; demanda de pré-escola mapeada",
-      "seguranca": "taxa de homicídios 6.9/100 mil hab. (1 óbito em 2024; SIM/DATASUS); delegacia de polícia civil (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 22.4/100 mil hab. (4 óbitos em 2024; cap. XX, saudeemdado/IBGE); delegacia de polícia civil (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -126,7 +126,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.645 (Atlas 2010); homicídios 6.9/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.645 (Atlas 2010); causas externas 22.4/100 mil (2024); validar comércio e Correios no local"
     },
     {
       "rank": 4,
@@ -144,12 +144,12 @@
       "altitude": 18,
       "cidade_media": "São José de Ribamar (31 km)",
       "grande_centro": "São Luís (~30 min, 43 km)",
-      "homicidios": 5,
+      "homicidios": 13,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 40.3,
+      "taxa_homicidios_100k": 107.6,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (6 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria exclusiva; conselho municipal de educação; conselho de alimentação escolar",
-      "seguranca": "taxa de homicídios 40.3/100 mil hab. (5 óbitos em 2024; SIM/DATASUS); delegacia de polícia civil (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 107.6/100 mil hab. (13 óbitos em 2024; cap. XX, saudeemdado/IBGE); delegacia de polícia civil (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -159,7 +159,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.641 (Atlas 2010); homicídios 40.3/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.641 (Atlas 2010); causas externas 107.6/100 mil (2024); validar comércio e Correios no local"
     },
     {
       "rank": 5,
@@ -177,12 +177,12 @@
       "altitude": 16,
       "cidade_media": "Natal (27 km)",
       "grande_centro": "Natal (~15 min, 27 km)",
-      "homicidios": 2,
+      "homicidios": 7,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 20.5,
+      "taxa_homicidios_100k": 66.5,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (6 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria em conjunto com outras políticas setoriais; conselho municipal de educação; conselho de alimentação escolar; demanda de pré-escola mapeada",
-      "seguranca": "taxa de homicídios 20.5/100 mil hab. (2 óbitos em 2024; SIM/DATASUS); delegacia de polícia civil (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 66.5/100 mil hab. (7 óbitos em 2024; cap. XX, saudeemdado/IBGE); delegacia de polícia civil (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -192,7 +192,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.608 (Atlas 2010); homicídios 20.5/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.608 (Atlas 2010); causas externas 66.5/100 mil (2024); validar comércio e Correios no local"
     },
     {
       "rank": 6,
@@ -210,12 +210,12 @@
       "altitude": 27,
       "cidade_media": "Maceió (27 km)",
       "grande_centro": "Maceió (~15 min, 27 km)",
-      "homicidios": 5,
+      "homicidios": 13,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 34.2,
+      "taxa_homicidios_100k": 91.7,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (5 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria em conjunto com outras políticas setoriais; conselho municipal de educação; conselho de alimentação escolar; demanda de pré-escola mapeada",
-      "seguranca": "taxa de homicídios 34.2/100 mil hab. (5 óbitos em 2024; SIM/DATASUS); delegacia de polícia civil (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 91.7/100 mil hab. (13 óbitos em 2024; cap. XX, saudeemdado/IBGE); delegacia de polícia civil (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -225,7 +225,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.605 (Atlas 2010); homicídios 34.2/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.605 (Atlas 2010); causas externas 91.7/100 mil (2024); validar comércio e Correios no local"
     },
     {
       "rank": 7,
@@ -243,12 +243,12 @@
       "altitude": 5,
       "cidade_media": "João Pessoa (28 km)",
       "grande_centro": "João Pessoa (~15 min, 28 km)",
-      "homicidios": 4,
+      "homicidios": 13,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 32.5,
+      "taxa_homicidios_100k": 99.8,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (6 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria exclusiva; conselho municipal de educação; conselho de alimentação escolar; demanda de pré-escola mapeada",
-      "seguranca": "taxa de homicídios 32.5/100 mil hab. (4 óbitos em 2024; SIM/DATASUS); delegacia de polícia civil (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 99.8/100 mil hab. (13 óbitos em 2024; cap. XX, saudeemdado/IBGE); delegacia de polícia civil (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -258,7 +258,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.583 (Atlas 2010); homicídios 32.5/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.583 (Atlas 2010); causas externas 99.8/100 mil (2024); validar comércio e Correios no local"
     },
     {
       "rank": 8,
@@ -276,12 +276,12 @@
       "altitude": 9,
       "cidade_media": "João Pessoa (38 km)",
       "grande_centro": "João Pessoa (~30 min, 38 km)",
-      "homicidios": 7,
+      "homicidios": 20,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 37.9,
+      "taxa_homicidios_100k": 116.5,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (8 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria em conjunto com outras políticas setoriais; conselho municipal de educação; conselho de alimentação escolar",
-      "seguranca": "taxa de homicídios 37.9/100 mil hab. (7 óbitos em 2024; SIM/DATASUS); delegacia de polícia civil (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 116.5/100 mil hab. (20 óbitos em 2024; cap. XX, saudeemdado/IBGE); delegacia de polícia civil (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -291,7 +291,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.570 (Atlas 2010); homicídios 37.9/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.570 (Atlas 2010); causas externas 116.5/100 mil (2024); validar comércio e Correios no local"
     },
     {
       "rank": 9,
@@ -309,12 +309,12 @@
       "altitude": 2,
       "cidade_media": "Maceió (36 km)",
       "grande_centro": "Maceió (~30 min, 36 km)",
-      "homicidios": 4,
+      "homicidios": 11,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 24.5,
+      "taxa_homicidios_100k": 65.7,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (6 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria exclusiva; conselho municipal de educação; conselho de alimentação escolar; demanda de pré-escola mapeada",
-      "seguranca": "taxa de homicídios 24.5/100 mil hab. (4 óbitos em 2024; SIM/DATASUS); delegacia de polícia civil (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 65.7/100 mil hab. (11 óbitos em 2024; cap. XX, saudeemdado/IBGE); delegacia de polícia civil (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -324,7 +324,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.557 (Atlas 2010); homicídios 24.5/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.557 (Atlas 2010); causas externas 65.7/100 mil (2024); validar comércio e Correios no local"
     },
     {
       "rank": 10,
@@ -342,12 +342,12 @@
       "altitude": 93,
       "cidade_media": "Santa Rita (41 km)",
       "grande_centro": "João Pessoa (~30 min, 45 km)",
-      "homicidios": 2,
+      "homicidios": 7,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 24.1,
+      "taxa_homicidios_100k": 74.2,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (3 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria exclusiva; conselho municipal de educação; conselho de alimentação escolar; demanda de pré-escola mapeada",
-      "seguranca": "taxa de homicídios 24.1/100 mil hab. (2 óbitos em 2024; SIM/DATASUS); sem delegacia de polícia civil declarada (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 74.2/100 mil hab. (7 óbitos em 2024; cap. XX, saudeemdado/IBGE); sem delegacia de polícia civil declarada (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -357,7 +357,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.529 (Atlas 2010); homicídios 24.1/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.529 (Atlas 2010); causas externas 74.2/100 mil (2024); validar comércio e Correios no local"
     },
     {
       "rank": 11,
@@ -375,12 +375,12 @@
       "altitude": 32,
       "cidade_media": "Maceió (36 km)",
       "grande_centro": "Maceió (~30 min, 36 km)",
-      "homicidios": 2,
+      "homicidios": 6,
       "homicidios_ano": 2024,
-      "taxa_homicidios_100k": 33.9,
+      "taxa_homicidios_100k": 90.8,
       "saude": "emergência 24h municipal (IBGE MUNIC); Saúde da Família (3 equipes); estabelecimento de saúde da gestão municipal",
       "educacao": "órgão de educação: Secretaria exclusiva; conselho municipal de educação; conselho de alimentação escolar",
-      "seguranca": "taxa de homicídios 33.9/100 mil hab. (2 óbitos em 2024; SIM/DATASUS); delegacia de polícia civil (MUNIC 2023)",
+      "seguranca": "mortalidade por causas externas 90.8/100 mil hab. (6 óbitos em 2024; cap. XX, saudeemdado/IBGE); delegacia de polícia civil (MUNIC 2023)",
       "infra": {
         "upa_ou_emergencia_24h": true,
         "escola": true,
@@ -390,7 +390,7 @@
         "correios": true
       },
       "hidden": false,
-      "nota": "IDH 0.505 (Atlas 2010); homicídios 33.9/100 mil (2024); validar comércio e Correios no local"
+      "nota": "IDH 0.505 (Atlas 2010); causas externas 90.8/100 mil (2024); validar comércio e Correios no local"
     }
   ]
 }
